@@ -28,13 +28,12 @@ app.post("/api/checkout", async (req, res) => {
 
 app.post("/send", (req, res) => {
   const { email } = req.body;
-
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   const msg = {
     to: email,
     from: "patsiashnossa0@gmail.com",
     subject: "La Venus Patsias Hnos. S.a.",
-
+    text: "and easy to do anywhere, even with Node.js",
     html: "<strong>Le agradecemos su preferencia en nuestros productos de calidad, cualquier duda o inconveniente háganoslo saber por este medio.</strong>",
   };
   sgMail
